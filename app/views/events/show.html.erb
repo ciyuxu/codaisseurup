@@ -4,7 +4,8 @@
   <div class="panel-body">
 
 
-    <h3>Host: <%= @event.user.email %></h3>
+    <h4>Host: <%= @event.user.email %></h4>
+    <br>
 
     <!-- Main Info -->
     <h4>Main Info</h4>
@@ -28,9 +29,19 @@
       <p>Capacity: <%= @event.capacity %> persons</p>
       <li><%= !@event.includes_food ? ("<s>Food</s>").html_safe : "Food" %></li>
       <li><%= !@event.includes_drinks ? ("<del>Drink</del>").html_safe : "Drink" %></li>
+    </ul>
+
+    <h4>categories</h4>
+    <% @categories.each do |category| %>
+      <span class="label label-success"><%= category.name %></span>
+    <% end %>
+    </div>
+
+
 
   </div>
 
-</div>
+
+
 
 <%= link_to "Back", events_path, class: "btn btn-default" %>

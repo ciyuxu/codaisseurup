@@ -6,7 +6,9 @@ class EventsController < ApplicationController
     @events = current_user.events
   end
 
-  def show; end
+  def show
+    @categories = @event.categories
+  end
 
   def new
     @event = current_user.events.build
@@ -51,7 +53,8 @@ class EventsController < ApplicationController
       :includes_drinks,
       :starts_at,
       :ends_at,
-      :active
+      :active,
+      category_ids: []
       )
   end
 end
