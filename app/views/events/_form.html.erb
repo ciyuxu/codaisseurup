@@ -1,0 +1,95 @@
+<%= form_for @event do |f| %>
+  <div class="form-group">
+
+  <label>Main Info</label>
+
+  <div class="form-group">
+    <label>Event Name</label>
+    <%= f.text_field :name, placeholder: "Put in your event's name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Event Location</label>
+    <%= f.text_area :location, rows: 1, placeholder: "Put in your event's location", class: "form-control" %>
+  </div>
+
+  <label>Event description</label>
+
+  <div class="form-group">
+    <%= f.text_area :description, rows: 16, placeholder: "Say something about your event", class: "form-control" %>
+  </div>
+
+  <label>Time</label>
+
+  <label>Start from</label>
+  <div class="container">
+      <div class="row">
+          <div class='col-sm-6'>
+              <div class="form-group">
+                  <div class='input-group date' id='starts_at'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#starts_at').datetimepicker();
+              });
+          </script>
+      </div>
+  </div>
+
+<label>End at</label>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='ends_at'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#ends_at').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <label>Other Info</label>
+
+
+  <div class="form-group">
+    <%= f.check_box :includes_food %> Food
+  </div>
+  <div class="form-group">
+    <%= f.check_box :includes_drinks %> Drinks
+  </div>
+
+
+
+  <label>Publish this place?</label>
+
+  <div class="form-group">
+    <%= f.check_box :active %> Active
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
