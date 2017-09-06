@@ -10,7 +10,7 @@ FactoryGirl.define do
     starts_at          { Faker::Time.between(2.days.ago, 1.day.ago) }
     ends_at            { Faker::Time.between(2.days.ago, 1.day.ago) }
     user               { build(:user) }
-  
+
 
     trait :active do
       active true
