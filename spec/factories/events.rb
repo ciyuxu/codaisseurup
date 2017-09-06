@@ -7,9 +7,10 @@ FactoryGirl.define do
     capacity           30
     includes_food      false
     includes_drinks    true
-    starts_at          {}
-    starts_at          {}
-    user              { build(:user) }
+    starts_at          { Faker::Time.between(2.days.ago, 1.day.ago) }
+    ends_at            { Faker::Time.between(2.days.ago, 1.day.ago) }
+    user               { build(:user) }
+  
 
     trait :active do
       active true

@@ -29,6 +29,8 @@
       <p>Capacity: <%= @event.capacity %> persons</p>
       <li><%= !@event.includes_food ? ("<s>Food</s>").html_safe : "Food" %></li>
       <li><%= !@event.includes_drinks ? ("<del>Drink</del>").html_safe : "Drink" %></li>
+       <p>Price: <%= @event.price %></p>
+
     </ul>
 
     <h4>categories</h4>
