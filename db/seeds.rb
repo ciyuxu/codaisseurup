@@ -3,7 +3,7 @@ User.destroy_all
 Profile.destroy_all
 Event.destroy_all
 Category.destroy_all
-
+Registration.destroy_all
 
 
 #Categories
@@ -34,3 +34,8 @@ photo6 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dnxpj95us/im
 photo7 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dnxpj95us/image/upload/v1504786600/Depositphotos_35963367_original-1024x683_hk7pjv.jpg", event: event3)
 photo8 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dnxpj95us/image/upload/v1504786600/bonjour_al8g6i.jpg", event: event3)
 photo9 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dnxpj95us/image/upload/v1504786600/Fluent-Forever-App-And-Book-Promise-To-Help-You-Learn-A-Language1_shdlnp.jpg", event: event3)
+
+
+#registrations
+Registration.create!(event: event2, price: 5, status: true, user: ren)
+Registration.create!(event: event1, price: 10, status: true, user: lun)
