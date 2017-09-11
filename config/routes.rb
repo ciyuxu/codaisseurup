@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   resources :events, except: [:destroy]
   resources :photos
 
+
+  namespace :api do
+    resources :events
+  end
+
 end
